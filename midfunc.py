@@ -12,7 +12,7 @@ import nnedi3_rpow2 as rpow2  # https://github.com/darealshinji/vapoursynth-plug
 # fvsfunc: https://github.com/Irrational-Encoding-Wizardry/fvsfunc
 # nnedi3_rpow2: https://github.com/darealshinji/vapoursynth-plugins/blob/master/scripts/nnedi3_rpow2.py
 
-core = vs.core;
+core = vs.core
 
 """
 fvf.DescaleAA() and fvf.Descale[M]() should only be used when the desired resolution is the original resolution

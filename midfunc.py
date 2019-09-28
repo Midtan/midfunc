@@ -36,9 +36,10 @@ Parameters
 """
 
 
-def Descale444ToTarget(clip: vs.clipNode, native_kernel: str = 'bicubic', descale_masked: bool = True,
-                       native_width: int = None, native_height: int = None, target_kernel: str = 'spline36',
-                       target_width: int = None, target_height: int = None, nnedi3_rpow2: bool = False, **kwargs):
+def Descale444ToTarget(clip: vs.VideoNode, native_kernel: str = 'bicubic', descale_masked: bool = True,
+                       nnedi3_rpow2: bool = False, *,
+                       native_width: int, native_height: int, target_kernel: str = 'spline36',
+                       target_width: int, target_height: int, **kwargs):
     if native_width is None:
         raise ValueError('Descale444ToTarget: parameter "native_width" is required!')
     if native_height is None:

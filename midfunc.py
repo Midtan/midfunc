@@ -36,19 +36,10 @@ Parameters
 """
 
 
-def Descale444ToTarget(clip: vs.VideoNode, native_kernel: str = 'bicubic', descale_masked: bool = True,
-                       nnedi3_rpow2: bool = False, *,
-                       native_width: int, native_height: int, target_kernel: str = 'spline36',
-                       target_width: int, target_height: int, **kwargs):
-    if native_width is None:
-        raise ValueError('Descale444ToTarget: parameter "native_width" is required!')
-    if native_height is None:
-        raise ValueError('Descale444ToTarget: parameter "native_height" is required!')
-    if target_width is None:
-        raise ValueError('Descale444ToTarget: parameter "target_width" is required!')
-    if target_height is None:
-        raise ValueError('Descale444ToTarget: parameter "target_height" is required!')
-
+def Descale444ToTarget(clip: vs.VideoNode, descale_masked: bool = True, nnedi3_rpow2: bool = False, *,
+                       native_kernel: str = 'bicubic', native_width: int, native_height: int,
+                       target_kernel: str = 'spline36', target_width: int, target_height: int,
+                       **kwargs):
     y = clip.std.ShufflePlanes(planes=0, colorfamily=vs.GRAY)
     u = clip.std.ShufflePlanes(planes=1, colorfamily=vs.GRAY)
     v = clip.std.ShufflePlanes(planes=2, colorfamily=vs.GRAY)
